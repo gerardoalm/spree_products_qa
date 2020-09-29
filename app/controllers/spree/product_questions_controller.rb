@@ -1,8 +1,8 @@
-class Spree::QuestionsController < Spree::StoreController
-  before_filter :load_data
+class Spree::ProductQuestionsController < Spree::StoreController
+  before_action :load_data
 
   def create
-    question = @product.questions.new(allowed_params)
+    question = @product.product_questions.new(allowed_params)
     question.user_id = current_spree_user.id
     if question.save
       flash[:notice] = t('question.sent')
@@ -19,6 +19,6 @@ class Spree::QuestionsController < Spree::StoreController
   end
 
   def allowed_params
-    params.require(:question).permit(:content, :product_id)
+    params.require(:product_question).permit(:content, :product_id)
   end
 end

@@ -1,7 +1,7 @@
 <% content_for :page_title do %>
   <%= t(:products_with_pending_questions) %>
 <% end %>
-<%= render partial: 'spree/admin/shared/product_sub_menu' %>
+
 
 <% if @collection.any? %>
   <table class="index" id="listing_products">
@@ -22,7 +22,7 @@
             <%= link_to product.name, edit_admin_product_path(product) %>
           </td>
           <td class="actions" data-hook="admin_products_pending_questions_index_row_actions">
-            <%= link_to t(:go_to_questions), admin_product_questions_path(product) %>
+            <%= link_to t(:go_to_questions), admin_product_product_questions_path(product) %>
           </td>
         </tr>
       <% end %>

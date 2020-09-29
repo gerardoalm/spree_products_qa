@@ -1,6 +1,6 @@
-class CreateSpreeQuestions < ActiveRecord::Migration
+class CreateSpreeProductQuestions < ActiveRecord::Migration[4.2]
   def change
-    create_table :spree_questions do |t|
+    create_table :spree_product_questions do |t|
       t.integer :product_id
       t.integer :user_id
       t.text :content
@@ -8,6 +8,6 @@ class CreateSpreeQuestions < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :spree_questions, :product_id
+    add_index :spree_product_questions, :product_id
   end
 end

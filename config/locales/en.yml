@@ -10,6 +10,7 @@ en:
   products_with_pending_questions: 'Products with pending questions'
   no_pending_questions: "There's no pending questions"
   go_to_questions: "Go to questions"
+  q: 'Q'
   question:
     content: 'Content'
     asked_by: 'Asked by'

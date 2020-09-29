@@ -1,17 +1,17 @@
-<% if @product.questions.answered.visible.present? %>
+<% if @product.product_questions.answered.visible.present? %>
   <div class="row">
-    <h6 class="product-section-title"><%= t(:questions_and_answers) %></h6>
-    <% @product.questions.answered.visible.each_with_index do |question, index| %>
-      <div class="qna">
-        <div class="question"><%= "#{index+1}. #{question.content}" %></div>
-        <div class="answer"><%= question.answer.content %></div>
+        <h4 class="product-section-title w-100 font-weight-bold"><%= t(:questions_and_answers) %></h4>
+    <% @product.product_questions.answered.visible.each_with_index do |question, index| %>
+      <div class="qna w-100">
+        <div class="question"><span class="pr-2"><%=t(:q)%></span><%= "#{question.content}" %></div>
+        <div class="answer"><%= question.product_answer.content %></div>
       </div>
     <% end %>
   </div>
 <% end %>
 <% if spree_current_user.present? %>
-  <div class="row">
-    <h6 class="product-section-title"><%= t(:do_you_have_any_questions) %></h6>
+  <div class="row pt-2">
+    <h5 class="product-section-title w-100"><%= t(:do_you_have_any_questions) %></h5>
     <div class='question_form'>
       <%= render 'question_form' %>
     </div>

@@ -1,5 +1,5 @@
-class Spree::Answer < ActiveRecord::Base
-  belongs_to :question
+class Spree::ProductAnswer < ActiveRecord::Base
+  belongs_to :product_question
 
   validates :content, presence: true
 
